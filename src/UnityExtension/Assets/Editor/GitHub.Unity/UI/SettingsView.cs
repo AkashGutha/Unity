@@ -80,11 +80,7 @@ namespace GitHub.Unity
         {
             base.OnDataUpdate();
 
-            if (userSettingsView != null)
-            {
-                userSettingsView.OnDataUpdate();
-            }
-
+            userSettingsView.OnDataUpdate();
 
             if (gitPathView != null)
             {
@@ -106,11 +102,6 @@ namespace GitHub.Unity
             remoteHasChanged = true;
 
             Refresh();
-        }
-
-        public override bool IsBusy
-        {
-            get { return isBusy || userSettingsView.IsBusy || gitPathView.IsBusy; }
         }
 
         public override void Refresh()
@@ -371,6 +362,11 @@ namespace GitHub.Unity
                 }
             }
             EditorGUI.EndDisabledGroup();
+        }
+
+        public override bool IsBusy
+        {
+            get { return isBusy || userSettingsView.IsBusy || gitPathView.IsBusy; }
         }
     }
 }
