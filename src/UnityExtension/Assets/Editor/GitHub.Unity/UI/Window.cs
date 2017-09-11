@@ -142,11 +142,6 @@ namespace GitHub.Unity
                 ActiveView.OnSelectionChange();
         }
 
-        public override bool IsBusy
-        {
-            get { return false; }
-        }
-
         public override void Refresh()
         {
             base.Refresh();
@@ -426,6 +421,11 @@ namespace GitHub.Unity
         public InitProjectView InitProjectView
         {
             get { return initProjectView; }
+        }
+
+        public override bool IsBusy
+        {
+            get { return false; }
         }
 
         private Subview ActiveView
